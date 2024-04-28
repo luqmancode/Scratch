@@ -1,4 +1,7 @@
 import functools
+import os
+
+print(os.listdir())
 
 def fibonacci(n):
     if n < 2:
