@@ -1,4 +1,5 @@
 import functools
+import time
 
 def fibonacci(n):
     if n < 2:
