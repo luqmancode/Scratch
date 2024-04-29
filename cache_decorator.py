@@ -2,6 +2,7 @@ import functools
 import os
 
 print(os.listdir())
+print(os.cwd())
 
 def fibonacci(n):
     if n < 2:
