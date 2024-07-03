@@ -1,5 +1,5 @@
 class Math:
-    
+
     @staticmethod
     def add(x, y):
         return x + y
@@ -7,6 +7,7 @@ class Math:
     @staticmethod
     def multiply(x, y):
         return x * y
+
 
 print(Math.add(5, 7))
 print(Math.multiply(9, 5))

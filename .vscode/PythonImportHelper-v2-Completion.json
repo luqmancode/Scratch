@@ -1,13 +1,5 @@
 [
     {
-        "label": "ABC",
-        "importPath": "abc",
-        "description": "abc",
-        "isExtraImport": true,
-        "detail": "abc",
-        "documentation": {}
-    },
-    {
         "label": "ABCMeta",
         "importPath": "abc",
         "description": "abc",
@@ -50,6 +42,15 @@
         "documentation": {}
     },
     {
+        "label": "class_namespaces_first_file",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "class_namespaces_first_file",
+        "description": "class_namespaces_first_file",
+        "detail": "class_namespaces_first_file",
+        "documentation": {}
+    },
+    {
         "label": "dataclass",
         "importPath": "dataclasses",
         "description": "dataclasses",
@@ -67,6 +68,62 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
         "label": "Shape",
         "kind": 6,
         "importPath": "abstraction01",
@@ -80,7 +137,7 @@
         "kind": 6,
         "importPath": "abstraction01",
         "description": "abstraction01",
-        "peekOfCode": "class Rectangle(Shape):\n    def __init__(self, length, breadth):\n        super().__init__('Rectangle')\n        self.length = length\n        self.breadth = breadth\n    def area(self):\n        return self.length * self.breadth\n    def perimeter(self):\n        return (self.length + self.breadth) * 2\nclass Circle(Shape):",
+        "peekOfCode": "class Rectangle(Shape):\n    def __init__(self, length, breadth):\n        super().__init__(\"Rectangle\")\n        self.length = length\n        self.breadth = breadth\n    def area(self):\n        return self.length * self.breadth\n    def perimeter(self):\n        return (self.length + self.breadth) * 2\nclass Circle(Shape):",
         "detail": "abstraction01",
         "documentation": {}
     },
@@ -89,7 +146,7 @@
         "kind": 6,
         "importPath": "abstraction01",
         "description": "abstraction01",
-        "peekOfCode": "class Circle(Shape):\n    def __init__(self, radius):\n        super().__init__('Circle')\n        self.radius = radius\n    def area(self):\n        return pi * (self.radius ** 2)\n    def perimeter(self):\n        return 2 * pi * self.radius\n# s1 = Shape('Square') TypeError: Can't instantiate abstract class Shape with abstract methods area, perimeter\nr = Rectangle(5, 8)",
+        "peekOfCode": "class Circle(Shape):\n    def __init__(self, radius):\n        super().__init__(\"Circle\")\n        self.radius = radius\n    def area(self):\n        return pi * (self.radius**2)\n    def perimeter(self):\n        return 2 * pi * self.radius\n# s1 = Shape('Square') TypeError: Can't instantiate abstract class Shape with abstract methods area, perimeter\nr = Rectangle(5, 8)",
         "detail": "abstraction01",
         "documentation": {}
     },
@@ -170,7 +227,7 @@
         "kind": 6,
         "importPath": "calling_super",
         "description": "calling_super",
-        "peekOfCode": "class Proxy:\n    def __init__(self, obj):\n        self._obj = obj\n    def __getattr__(self, name):\n        return getattr(self._obj, name)\n    def __setattr__(self, name, value):\n        if name.startswith('_'):\n            super().__setattr__(name, value)\n        else:\n            setattr(self._obj, name, value)",
+        "peekOfCode": "class Proxy:\n    def __init__(self, obj):\n        self._obj = obj\n    def __getattr__(self, name):\n        return getattr(self._obj, name)\n    def __setattr__(self, name, value):\n        if name.startswith(\"_\"):\n            super().__setattr__(name, value)\n        else:\n            setattr(self._obj, name, value)",
         "detail": "calling_super",
         "documentation": {}
     },
@@ -206,7 +263,7 @@
         "kind": 5,
         "importPath": "calling_super",
         "description": "calling_super",
-        "peekOfCode": "p = Proxy('sun')\nprint(p)\nprint(getattr(p, 'sun', None))\n# print(getattr(p, 'obj'))\nsetattr(p, 'sex', 'Male')\nprint(getattr(p, 'sex'))",
+        "peekOfCode": "p = Proxy(\"sun\")\nprint(p)\nprint(getattr(p, \"sun\", None))\n# print(getattr(p, 'obj'))\nsetattr(p, \"sex\", \"Male\")\nprint(getattr(p, \"sex\"))",
         "detail": "calling_super",
         "documentation": {}
     },
@@ -229,11 +286,146 @@
         "documentation": {}
     },
     {
+        "label": "FirstClass",
+        "kind": 6,
+        "importPath": "class_namespaces_first_file",
+        "description": "class_namespaces_first_file",
+        "peekOfCode": "class FirstClass:\n    def set_data(self, value):\n        self.data = value\n    def display(self):\n        return self.data\nx = FirstClass()\ny = FirstClass()\n# print(x.display()) # AttributeError: 'FirstClass' object has no attribute 'data'\nx.set_data('King Authur')\ny.set_data(3.14)",
+        "detail": "class_namespaces_first_file",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "class_namespaces_first_file",
+        "description": "class_namespaces_first_file",
+        "peekOfCode": "x = FirstClass()\ny = FirstClass()\n# print(x.display()) # AttributeError: 'FirstClass' object has no attribute 'data'\nx.set_data('King Authur')\ny.set_data(3.14)\nprint(x.display())\nprint(y.display())\nx.data = 5.45\nprint(x.display())\nprint(y.display())",
+        "detail": "class_namespaces_first_file",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "class_namespaces_first_file",
+        "description": "class_namespaces_first_file",
+        "peekOfCode": "y = FirstClass()\n# print(x.display()) # AttributeError: 'FirstClass' object has no attribute 'data'\nx.set_data('King Authur')\ny.set_data(3.14)\nprint(x.display())\nprint(y.display())\nx.data = 5.45\nprint(x.display())\nprint(y.display())",
+        "detail": "class_namespaces_first_file",
+        "documentation": {}
+    },
+    {
+        "label": "x.data",
+        "kind": 5,
+        "importPath": "class_namespaces_first_file",
+        "description": "class_namespaces_first_file",
+        "peekOfCode": "x.data = 5.45\nprint(x.display())\nprint(y.display())",
+        "detail": "class_namespaces_first_file",
+        "documentation": {}
+    },
+    {
+        "label": "SecondClass",
+        "kind": 6,
+        "importPath": "class_namespaces_sec_file",
+        "description": "class_namespaces_sec_file",
+        "peekOfCode": "class SecondClass(class_namespaces_first_file.FirstClass):\n    def display(self):\n        return f\"Displaying: {self.data}\"\nz = SecondClass()\nz.set_data('King Kohli')\nprint(z.display())\nclass ThirdClass(SecondClass):\n    def __init__(self, data):\n        self.data = data\n    def __add__(self, other):",
+        "detail": "class_namespaces_sec_file",
+        "documentation": {}
+    },
+    {
+        "label": "ThirdClass",
+        "kind": 6,
+        "importPath": "class_namespaces_sec_file",
+        "description": "class_namespaces_sec_file",
+        "peekOfCode": "class ThirdClass(SecondClass):\n    def __init__(self, data):\n        self.data = data\n    def __add__(self, other):\n        return ThirdClass(self.data + other)\n    def __str__(self):\n        return f\"Third Class: {self.data}\"\n    def mul(self, other):\n        return self.data * other\na = ThirdClass('abc')",
+        "detail": "class_namespaces_sec_file",
+        "documentation": {}
+    },
+    {
+        "label": "z",
+        "kind": 5,
+        "importPath": "class_namespaces_sec_file",
+        "description": "class_namespaces_sec_file",
+        "peekOfCode": "z = SecondClass()\nz.set_data('King Kohli')\nprint(z.display())\nclass ThirdClass(SecondClass):\n    def __init__(self, data):\n        self.data = data\n    def __add__(self, other):\n        return ThirdClass(self.data + other)\n    def __str__(self):\n        return f\"Third Class: {self.data}\"",
+        "detail": "class_namespaces_sec_file",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "class_namespaces_sec_file",
+        "description": "class_namespaces_sec_file",
+        "peekOfCode": "a = ThirdClass('abc')\nprint(a.display())\nprint(a)\nb = a + 'xyz'\nprint(b)\nprint(b.display()) # due to return ThirdClass(self.data + other)\nprint(a.mul(3))",
+        "detail": "class_namespaces_sec_file",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "class_namespaces_sec_file",
+        "description": "class_namespaces_sec_file",
+        "peekOfCode": "b = a + 'xyz'\nprint(b)\nprint(b.display()) # due to return ThirdClass(self.data + other)\nprint(a.mul(3))",
+        "detail": "class_namespaces_sec_file",
+        "documentation": {}
+    },
+    {
+        "label": "Rec",
+        "kind": 6,
+        "importPath": "class_namespaces_three",
+        "description": "class_namespaces_three",
+        "peekOfCode": "class Rec: pass\nprint(Rec)\nRec.name = 'Bob'\nRec.age = 40\nprint(Rec.name, Rec.age)\nx = Rec()\ny = Rec()\nprint(x.name, x.age)\nprint(y.name, y.age)\nx.name = 'Sue'",
+        "detail": "class_namespaces_three",
+        "documentation": {}
+    },
+    {
+        "label": "Rec.name",
+        "kind": 5,
+        "importPath": "class_namespaces_three",
+        "description": "class_namespaces_three",
+        "peekOfCode": "Rec.name = 'Bob'\nRec.age = 40\nprint(Rec.name, Rec.age)\nx = Rec()\ny = Rec()\nprint(x.name, x.age)\nprint(y.name, y.age)\nx.name = 'Sue'\nprint(Rec.name, x.name, y.name)\nprint(1, Rec.__dict__)",
+        "detail": "class_namespaces_three",
+        "documentation": {}
+    },
+    {
+        "label": "Rec.age",
+        "kind": 5,
+        "importPath": "class_namespaces_three",
+        "description": "class_namespaces_three",
+        "peekOfCode": "Rec.age = 40\nprint(Rec.name, Rec.age)\nx = Rec()\ny = Rec()\nprint(x.name, x.age)\nprint(y.name, y.age)\nx.name = 'Sue'\nprint(Rec.name, x.name, y.name)\nprint(1, Rec.__dict__)\nprint(2, x.__dict__)",
+        "detail": "class_namespaces_three",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "class_namespaces_three",
+        "description": "class_namespaces_three",
+        "peekOfCode": "x = Rec()\ny = Rec()\nprint(x.name, x.age)\nprint(y.name, y.age)\nx.name = 'Sue'\nprint(Rec.name, x.name, y.name)\nprint(1, Rec.__dict__)\nprint(2, x.__dict__)\nprint(3, y.__dict__)",
+        "detail": "class_namespaces_three",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "class_namespaces_three",
+        "description": "class_namespaces_three",
+        "peekOfCode": "y = Rec()\nprint(x.name, x.age)\nprint(y.name, y.age)\nx.name = 'Sue'\nprint(Rec.name, x.name, y.name)\nprint(1, Rec.__dict__)\nprint(2, x.__dict__)\nprint(3, y.__dict__)",
+        "detail": "class_namespaces_three",
+        "documentation": {}
+    },
+    {
+        "label": "x.name",
+        "kind": 5,
+        "importPath": "class_namespaces_three",
+        "description": "class_namespaces_three",
+        "peekOfCode": "x.name = 'Sue'\nprint(Rec.name, x.name, y.name)\nprint(1, Rec.__dict__)\nprint(2, x.__dict__)\nprint(3, y.__dict__)",
+        "detail": "class_namespaces_three",
+        "documentation": {}
+    },
+    {
         "label": "Product",
         "kind": 6,
         "importPath": "dataclass_decorator",
         "description": "dataclass_decorator",
-        "peekOfCode": "class Product:\n    name: str\n    price: float\n    quantity: int = 0\n    def price(self):\n        return self.price * self.quantity \np1 = Product('Toothpaste', 20.54, 10)\np2 = Product('Toothpaste', 20.54, 10)\np3 = Product('ToothBrush', 5.99, 5)\nprint(p1)",
+        "peekOfCode": "class Product:\n    name: str\n    price: float\n    quantity: int = 0\n    def price(self):\n        return self.price * self.quantity\np1 = Product(\"Toothpaste\", 20.54, 10)\np2 = Product(\"Toothpaste\", 20.54, 10)\np3 = Product(\"ToothBrush\", 5.99, 5)\nprint(p1)",
         "detail": "dataclass_decorator",
         "documentation": {}
     },
@@ -242,7 +434,7 @@
         "kind": 5,
         "importPath": "dataclass_decorator",
         "description": "dataclass_decorator",
-        "peekOfCode": "p1 = Product('Toothpaste', 20.54, 10)\np2 = Product('Toothpaste', 20.54, 10)\np3 = Product('ToothBrush', 5.99, 5)\nprint(p1)\n# dataclass has internally __init__, __repr__. __eq__ on it\nprint(p1 == p2)\nprint(p1 == p3)",
+        "peekOfCode": "p1 = Product(\"Toothpaste\", 20.54, 10)\np2 = Product(\"Toothpaste\", 20.54, 10)\np3 = Product(\"ToothBrush\", 5.99, 5)\nprint(p1)\n# dataclass has internally __init__, __repr__. __eq__ on it\nprint(p1 == p2)\nprint(p1 == p3)",
         "detail": "dataclass_decorator",
         "documentation": {}
     },
@@ -251,7 +443,7 @@
         "kind": 5,
         "importPath": "dataclass_decorator",
         "description": "dataclass_decorator",
-        "peekOfCode": "p2 = Product('Toothpaste', 20.54, 10)\np3 = Product('ToothBrush', 5.99, 5)\nprint(p1)\n# dataclass has internally __init__, __repr__. __eq__ on it\nprint(p1 == p2)\nprint(p1 == p3)",
+        "peekOfCode": "p2 = Product(\"Toothpaste\", 20.54, 10)\np3 = Product(\"ToothBrush\", 5.99, 5)\nprint(p1)\n# dataclass has internally __init__, __repr__. __eq__ on it\nprint(p1 == p2)\nprint(p1 == p3)",
         "detail": "dataclass_decorator",
         "documentation": {}
     },
@@ -260,7 +452,7 @@
         "kind": 5,
         "importPath": "dataclass_decorator",
         "description": "dataclass_decorator",
-        "peekOfCode": "p3 = Product('ToothBrush', 5.99, 5)\nprint(p1)\n# dataclass has internally __init__, __repr__. __eq__ on it\nprint(p1 == p2)\nprint(p1 == p3)",
+        "peekOfCode": "p3 = Product(\"ToothBrush\", 5.99, 5)\nprint(p1)\n# dataclass has internally __init__, __repr__. __eq__ on it\nprint(p1 == p2)\nprint(p1 == p3)",
         "detail": "dataclass_decorator",
         "documentation": {}
     },
@@ -287,7 +479,7 @@
         "kind": 6,
         "importPath": "extending_propertyin_subclass",
         "description": "extending_propertyin_subclass",
-        "peekOfCode": "class Person:\n    def __init__(self, name):\n        self.name = name\n    @property\n    def name(self):\n        return self._name\n    @name.setter\n    def name(self, value):\n        if not isinstance(value, str):\n            raise TypeError('value should be string')",
+        "peekOfCode": "class Person:\n    def __init__(self, name):\n        self.name = name\n    @property\n    def name(self):\n        return self._name\n    @name.setter\n    def name(self, value):\n        if not isinstance(value, str):\n            raise TypeError(\"value should be string\")",
         "detail": "extending_propertyin_subclass",
         "documentation": {}
     },
@@ -305,7 +497,7 @@
         "kind": 5,
         "importPath": "extending_propertyin_subclass",
         "description": "extending_propertyin_subclass",
-        "peekOfCode": "p1 = Person('mohamed')\nprint(p1.name)\np1.name = 'Luqman'\nprint(p1.name)\n# del p1.name AttributeError: name should not be deleted\nclass SubPerson(Person):\n    @property\n    def name(self):\n        print(\"Getting the name\")\n        return super().name",
+        "peekOfCode": "p1 = Person(\"mohamed\")\nprint(p1.name)\np1.name = \"Luqman\"\nprint(p1.name)\n# del p1.name AttributeError: name should not be deleted\nclass SubPerson(Person):\n    @property\n    def name(self):\n        print(\"Getting the name\")\n        return super().name",
         "detail": "extending_propertyin_subclass",
         "documentation": {}
     },
@@ -314,7 +506,7 @@
         "kind": 5,
         "importPath": "extending_propertyin_subclass",
         "description": "extending_propertyin_subclass",
-        "peekOfCode": "p1.name = 'Luqman'\nprint(p1.name)\n# del p1.name AttributeError: name should not be deleted\nclass SubPerson(Person):\n    @property\n    def name(self):\n        print(\"Getting the name\")\n        return super().name\n    @name.setter\n    def name(self, value):",
+        "peekOfCode": "p1.name = \"Luqman\"\nprint(p1.name)\n# del p1.name AttributeError: name should not be deleted\nclass SubPerson(Person):\n    @property\n    def name(self):\n        print(\"Getting the name\")\n        return super().name\n    @name.setter\n    def name(self, value):",
         "detail": "extending_propertyin_subclass",
         "documentation": {}
     },
@@ -323,7 +515,7 @@
         "kind": 5,
         "importPath": "extending_propertyin_subclass",
         "description": "extending_propertyin_subclass",
-        "peekOfCode": "sp1 = SubPerson('Mohamed')\nprint(sp1.name)\nsp1.name = 'luqman'\nprint(sp1.name)\ndel sp1.name",
+        "peekOfCode": "sp1 = SubPerson(\"Mohamed\")\nprint(sp1.name)\nsp1.name = \"luqman\"\nprint(sp1.name)\ndel sp1.name",
         "detail": "extending_propertyin_subclass",
         "documentation": {}
     },
@@ -332,8 +524,53 @@
         "kind": 5,
         "importPath": "extending_propertyin_subclass",
         "description": "extending_propertyin_subclass",
-        "peekOfCode": "sp1.name = 'luqman'\nprint(sp1.name)\ndel sp1.name",
+        "peekOfCode": "sp1.name = \"luqman\"\nprint(sp1.name)\ndel sp1.name",
         "detail": "extending_propertyin_subclass",
+        "documentation": {}
+    },
+    {
+        "label": "InfiniteNaturalNumber",
+        "kind": 6,
+        "importPath": "iter_and_generat",
+        "description": "iter_and_generat",
+        "peekOfCode": "class InfiniteNaturalNumber:\n    def __init__(self):\n        self.num = 0\n    def __iter__(self):\n        return self\n    def __next__(self):\n        self.num += 1\n        return self.num\ninfi = iter(InfiniteNaturalNumber())\nprint(infi, type(infi))",
+        "detail": "iter_and_generat",
+        "documentation": {}
+    },
+    {
+        "label": "generate_natur_num",
+        "kind": 2,
+        "importPath": "iter_and_generat",
+        "description": "iter_and_generat",
+        "peekOfCode": "def generate_natur_num(num: int = 0):\n    while True:\n        yield num\n        num += 1\nfor num in generate_natur_num():\n    print(num)",
+        "detail": "iter_and_generat",
+        "documentation": {}
+    },
+    {
+        "label": "prices",
+        "kind": 5,
+        "importPath": "iter_and_generat",
+        "description": "iter_and_generat",
+        "peekOfCode": "prices = [1, 4, 5, 565, 2, 232]\nprice_iter = iter(prices)\nprint(next(price_iter)) # 1\nprint(price_iter.__next__()) # 4\nwhile True:\n    try:\n        print(price_iter.__next__())\n    except StopIteration:\n        break\nclass InfiniteNaturalNumber:",
+        "detail": "iter_and_generat",
+        "documentation": {}
+    },
+    {
+        "label": "price_iter",
+        "kind": 5,
+        "importPath": "iter_and_generat",
+        "description": "iter_and_generat",
+        "peekOfCode": "price_iter = iter(prices)\nprint(next(price_iter)) # 1\nprint(price_iter.__next__()) # 4\nwhile True:\n    try:\n        print(price_iter.__next__())\n    except StopIteration:\n        break\nclass InfiniteNaturalNumber:\n    def __init__(self):",
+        "detail": "iter_and_generat",
+        "documentation": {}
+    },
+    {
+        "label": "infi",
+        "kind": 5,
+        "importPath": "iter_and_generat",
+        "description": "iter_and_generat",
+        "peekOfCode": "infi = iter(InfiniteNaturalNumber())\nprint(infi, type(infi))\nprint(next(infi))\nprint(next(infi))\nprint(infi.__next__())\nprint(infi.__next__())\nprint(infi.__next__())\nprint(infi.__next__())\nprint(infi.__next__())\ndef generate_natur_num(num: int = 0):",
+        "detail": "iter_and_generat",
         "documentation": {}
     },
     {
@@ -350,7 +587,7 @@
         "kind": 5,
         "importPath": "manage_attributes",
         "description": "manage_attributes",
-        "peekOfCode": "p = Person('Mohamed', 'emp1')\nprint(p._first_name)\nprint(p.first_name)\n# del p.first_name  // AttributeError: First Name should not be deleted\n# p.first_name = 80 // ValueError: New name should be a string\np.first_name = 'Luqman'\nprint(p._first_name)\nprint(p._last_name)\nprint(p.last_name)\np.last_name = 'emp2'",
+        "peekOfCode": "p = Person(\"Mohamed\", \"emp1\")\nprint(p._first_name)\nprint(p.first_name)\n# del p.first_name  // AttributeError: First Name should not be deleted\n# p.first_name = 80 // ValueError: New name should be a string\np.first_name = \"Luqman\"\nprint(p._first_name)\nprint(p._last_name)\nprint(p.last_name)\np.last_name = \"emp2\"",
         "detail": "manage_attributes",
         "documentation": {}
     },
@@ -359,7 +596,7 @@
         "kind": 5,
         "importPath": "manage_attributes",
         "description": "manage_attributes",
-        "peekOfCode": "p.first_name = 'Luqman'\nprint(p._first_name)\nprint(p._last_name)\nprint(p.last_name)\np.last_name = 'emp2'\nprint(p.last_name)",
+        "peekOfCode": "p.first_name = \"Luqman\"\nprint(p._first_name)\nprint(p._last_name)\nprint(p.last_name)\np.last_name = \"emp2\"\nprint(p.last_name)",
         "detail": "manage_attributes",
         "documentation": {}
     },
@@ -368,7 +605,7 @@
         "kind": 5,
         "importPath": "manage_attributes",
         "description": "manage_attributes",
-        "peekOfCode": "p.last_name = 'emp2'\nprint(p.last_name)",
+        "peekOfCode": "p.last_name = \"emp2\"\nprint(p.last_name)",
         "detail": "manage_attributes",
         "documentation": {}
     },
@@ -377,7 +614,7 @@
         "kind": 6,
         "importPath": "name_encapsulation",
         "description": "name_encapsulation",
-        "peekOfCode": "class A:\n    def __init__(self):\n        self._internal = 0\n        self.public = 1\n    def _internal_method(self):\n        pass\n    def public_method(self):\n        pass \na1 = A()\nprint(a1._internal)",
+        "peekOfCode": "class A:\n    def __init__(self):\n        self._internal = 0\n        self.public = 1\n    def _internal_method(self):\n        pass\n    def public_method(self):\n        pass\na1 = A()\nprint(a1._internal)",
         "detail": "name_encapsulation",
         "documentation": {}
     },
@@ -386,7 +623,7 @@
         "kind": 6,
         "importPath": "name_encapsulation",
         "description": "name_encapsulation",
-        "peekOfCode": "class B:\n    def __init__(self):\n        self.__private = 2 # Non overridable on inheritance but override in 3.10 version\n        self.public = 3\n    def __private_method(self):\n        return f\"{self.__private}\"\n    def public_method(self):\n        return self.__private_method()\nb1 = B()\n# print(b1.__private) // AttributeError: 'B' object has no attribute '__private'. Did you mean: '_B__private'?",
+        "peekOfCode": "class B:\n    def __init__(self):\n        self.__private = (\n            2  # Non overridable on inheritance but override in 3.10 version\n        )\n        self.public = 3\n    def __private_method(self):\n        return f\"{self.__private}\"\n    def public_method(self):\n        return self.__private_method()",
         "detail": "name_encapsulation",
         "documentation": {}
     },
@@ -413,7 +650,7 @@
         "kind": 6,
         "importPath": "name_encapsulation",
         "description": "name_encapsulation",
-        "peekOfCode": "class B:\n    def __init__(self):\n        self.__private = 8\n    def __private_method(self):\n        print('B.__private_method', self.__private)\n    def public_method(self):\n        self.__private_method()\nclass C(B):\n    def __init__(self):\n        super().__init__()",
+        "peekOfCode": "class B:\n    def __init__(self):\n        self.__private = 8\n    def __private_method(self):\n        print(\"B.__private_method\", self.__private)\n    def public_method(self):\n        self.__private_method()\nclass C(B):\n    def __init__(self):\n        super().__init__()",
         "detail": "name_encapsulation",
         "documentation": {}
     },
@@ -422,7 +659,7 @@
         "kind": 6,
         "importPath": "name_encapsulation",
         "description": "name_encapsulation",
-        "peekOfCode": "class C(B):\n    def __init__(self):\n        super().__init__()\n        self.__private = 9      # Does not override B.__private but here its override to 9 as result\n    # Does not override B.__private_method()\n    def __private_method(self):\n        print('C.__private_method', self.__private)\n    def public_method(self):\n        self.__private_method()\nc = C()",
+        "peekOfCode": "class C(B):\n    def __init__(self):\n        super().__init__()\n        self.__private = (\n            9  # Does not override B.__private but here its override to 9 as result\n        )\n    # Does not override B.__private_method()\n    def __private_method(self):\n        print(\"C.__private_method\", self.__private)\n    def public_method(self):",
         "detail": "name_encapsulation",
         "documentation": {}
     },
@@ -431,7 +668,7 @@
         "kind": 5,
         "importPath": "name_encapsulation",
         "description": "name_encapsulation",
-        "peekOfCode": "a1 = A()\nprint(a1._internal)\nprint(a1.public)\na1._internal_method()\na1.public_method()\nclass B:\n    def __init__(self):\n        self.__private = 2 # Non overridable on inheritance but override in 3.10 version\n        self.public = 3\n    def __private_method(self):",
+        "peekOfCode": "a1 = A()\nprint(a1._internal)\nprint(a1.public)\na1._internal_method()\na1.public_method()\nclass B:\n    def __init__(self):\n        self.__private = (\n            2  # Non overridable on inheritance but override in 3.10 version\n        )",
         "detail": "name_encapsulation",
         "documentation": {}
     },
@@ -458,7 +695,7 @@
         "kind": 5,
         "importPath": "name_encapsulation",
         "description": "name_encapsulation",
-        "peekOfCode": "d1 = D()\nprint(d1.public)\nprint(d1.public_method())\nprint('-'*50)\n##########################################################################\n# Example of using __ method name to implement a \n# non-overrideable method\nclass B:\n    def __init__(self):\n        self.__private = 8",
+        "peekOfCode": "d1 = D()\nprint(d1.public)\nprint(d1.public_method())\nprint(\"-\" * 50)\n##########################################################################\n# Example of using __ method name to implement a\n# non-overrideable method\nclass B:\n    def __init__(self):\n        self.__private = 8",
         "detail": "name_encapsulation",
         "documentation": {}
     },
@@ -485,7 +722,7 @@
         "kind": 5,
         "importPath": "property_decorator",
         "description": "property_decorator",
-        "peekOfCode": "c = Circle(5)\nprint(c.radius)\nprint(c.diameter)\nc.radius = 50\nprint(c.diameter)\nc._radius = 6\nprint(c._radius)\n#c.radius = -3\ndel c.radius",
+        "peekOfCode": "c = Circle(5)\nprint(c.radius)\nprint(c.diameter)\nc.radius = 50\nprint(c.diameter)\nc._radius = 6\nprint(c._radius)\n# c.radius = -3\ndel c.radius",
         "detail": "property_decorator",
         "documentation": {}
     },
@@ -494,7 +731,7 @@
         "kind": 5,
         "importPath": "property_decorator",
         "description": "property_decorator",
-        "peekOfCode": "c.radius = 50\nprint(c.diameter)\nc._radius = 6\nprint(c._radius)\n#c.radius = -3\ndel c.radius",
+        "peekOfCode": "c.radius = 50\nprint(c.diameter)\nc._radius = 6\nprint(c._radius)\n# c.radius = -3\ndel c.radius",
         "detail": "property_decorator",
         "documentation": {}
     },
@@ -503,17 +740,53 @@
         "kind": 5,
         "importPath": "property_decorator",
         "description": "property_decorator",
-        "peekOfCode": "c._radius = 6\nprint(c._radius)\n#c.radius = -3\ndel c.radius",
+        "peekOfCode": "c._radius = 6\nprint(c._radius)\n# c.radius = -3\ndel c.radius",
         "detail": "property_decorator",
         "documentation": {}
     },
     {
-        "label": "#c.radius",
+        "label": "Language",
+        "kind": 6,
+        "importPath": "pydantic_usecase",
+        "description": "pydantic_usecase",
+        "peekOfCode": "class Language(Enum):\n    PY = 'python'\n    JAVA = 'java'\n    GO = 'go'\nclass Comments(BaseModel):\n    text: Optional[str]\nclass Blog(BaseModel):\n    title: str\n    description: Optional[str] = None\n    is_active: bool",
+        "detail": "pydantic_usecase",
+        "documentation": {}
+    },
+    {
+        "label": "Comments",
+        "kind": 6,
+        "importPath": "pydantic_usecase",
+        "description": "pydantic_usecase",
+        "peekOfCode": "class Comments(BaseModel):\n    text: Optional[str]\nclass Blog(BaseModel):\n    title: str\n    description: Optional[str] = None\n    is_active: bool\n    created_at: datetime = Field(default_factory=datetime.now)\n    language: Language = list[Language.PY]\n    comments: list[Comments] = []\nb1 = Blog(title='Hi Everyone!', is_active=True, comments=[{'text': 'Heelllo'}])",
+        "detail": "pydantic_usecase",
+        "documentation": {}
+    },
+    {
+        "label": "Blog",
+        "kind": 6,
+        "importPath": "pydantic_usecase",
+        "description": "pydantic_usecase",
+        "peekOfCode": "class Blog(BaseModel):\n    title: str\n    description: Optional[str] = None\n    is_active: bool\n    created_at: datetime = Field(default_factory=datetime.now)\n    language: Language = list[Language.PY]\n    comments: list[Comments] = []\nb1 = Blog(title='Hi Everyone!', is_active=True, comments=[{'text': 'Heelllo'}])\nprint(b1)\ntime.sleep(5)",
+        "detail": "pydantic_usecase",
+        "documentation": {}
+    },
+    {
+        "label": "b1",
         "kind": 5,
-        "importPath": "property_decorator",
-        "description": "property_decorator",
-        "peekOfCode": "#c.radius = -3\ndel c.radius",
-        "detail": "property_decorator",
+        "importPath": "pydantic_usecase",
+        "description": "pydantic_usecase",
+        "peekOfCode": "b1 = Blog(title='Hi Everyone!', is_active=True, comments=[{'text': 'Heelllo'}])\nprint(b1)\ntime.sleep(5)\nb2 = Blog(title='Need to file Tax', is_active=True, language=Language.JAVA)\nprint(b2)",
+        "detail": "pydantic_usecase",
+        "documentation": {}
+    },
+    {
+        "label": "b2",
+        "kind": 5,
+        "importPath": "pydantic_usecase",
+        "description": "pydantic_usecase",
+        "peekOfCode": "b2 = Blog(title='Need to file Tax', is_active=True, language=Language.JAVA)\nprint(b2)",
+        "detail": "pydantic_usecase",
         "documentation": {}
     },
     {
@@ -521,7 +794,7 @@
         "kind": 6,
         "importPath": "setattr_getter",
         "description": "setattr_getter",
-        "peekOfCode": "class Details:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    def display(self):\n        print(self.name, self.age)\nd1 = Details('Mohamed', 24)\nd1.display()\nsetattr(d1, 'name', 'Luqman')\nsetattr(d1, 'age', 35)",
+        "peekOfCode": "class Details:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    def display(self):\n        print(self.name, self.age)\nd1 = Details(\"Mohamed\", 24)\nd1.display()\nsetattr(d1, \"name\", \"Luqman\")\nsetattr(d1, \"age\", 35)",
         "detail": "setattr_getter",
         "documentation": {}
     },
@@ -530,7 +803,7 @@
         "kind": 5,
         "importPath": "setattr_getter",
         "description": "setattr_getter",
-        "peekOfCode": "d1 = Details('Mohamed', 24)\nd1.display()\nsetattr(d1, 'name', 'Luqman')\nsetattr(d1, 'age', 35)\nd1.display()\nprint(\"Getattr: \", getattr(d1, 'age'))\nprint('Hasattr: ', hasattr(d1, 'first_name'))\nprint('Hasattr2 :', hasattr(d1, 'name'))\nd1.make = 'India'\nprint(getattr(d1, 'make', None))",
+        "peekOfCode": "d1 = Details(\"Mohamed\", 24)\nd1.display()\nsetattr(d1, \"name\", \"Luqman\")\nsetattr(d1, \"age\", 35)\nd1.display()\nprint(\"Getattr: \", getattr(d1, \"age\"))\nprint(\"Hasattr: \", hasattr(d1, \"first_name\"))\nprint(\"Hasattr2 :\", hasattr(d1, \"name\"))\nd1.make = \"India\"\nprint(getattr(d1, \"make\", None))",
         "detail": "setattr_getter",
         "documentation": {}
     },
@@ -539,7 +812,7 @@
         "kind": 5,
         "importPath": "setattr_getter",
         "description": "setattr_getter",
-        "peekOfCode": "d1.make = 'India'\nprint(getattr(d1, 'make', None))\nprint(hasattr(d1, 'make'))\ndelattr(d1, 'make')\nprint(hasattr(d1, 'make'))",
+        "peekOfCode": "d1.make = \"India\"\nprint(getattr(d1, \"make\", None))\nprint(hasattr(d1, \"make\"))\ndelattr(d1, \"make\")\nprint(hasattr(d1, \"make\"))",
         "detail": "setattr_getter",
         "documentation": {}
     },
@@ -559,6 +832,60 @@
         "description": "staticmethod_decorator",
         "peekOfCode": "m = Math()\nprint(m.add(3, 4))\nprint(m.multiply(2, 7))",
         "detail": "staticmethod_decorator",
+        "documentation": {}
+    },
+    {
+        "label": "Person",
+        "kind": 6,
+        "importPath": "type_hints",
+        "description": "type_hints",
+        "peekOfCode": "class Person:\n    def __init__(self, name: str, age: int, weight: Optional[float] = None):\n        self.name = name\n        self.age = age\n        self.weight = weight\np1 = Person('Mike', 49)\np2 = Person('Hillary', 13, 23)\npersons: list[Person] = [p1, p2]\ndef smart_divide(func: Callable[[int, int], int | float]):\n    def inner(a, b):",
+        "detail": "type_hints",
+        "documentation": {}
+    },
+    {
+        "label": "add_numbers",
+        "kind": 2,
+        "importPath": "type_hints",
+        "description": "type_hints",
+        "peekOfCode": "def add_numbers(n1: int, n2: int) -> None:\n    print(\"Sum of numbers: \", n1 + n2)\nadd_numbers(5, 60)\nprices: list[float] = [1.9, 2.3, 3, 5.5]\noil_gallon: tuple[int, int, float] = (4, 5, 1.5)\nstudent: dict[str, int] = {\"john\": 56, \"Lela\": 18}\nclass Person:\n    def __init__(self, name: str, age: int, weight: Optional[float] = None):\n        self.name = name\n        self.age = age",
+        "detail": "type_hints",
+        "documentation": {}
+    },
+    {
+        "label": "smart_divide",
+        "kind": 2,
+        "importPath": "type_hints",
+        "description": "type_hints",
+        "peekOfCode": "def smart_divide(func: Callable[[int, int], int | float]):\n    def inner(a, b):\n        if b == 0:\n            raise ZeroDivisionError(\"demonimator should not be zero to divide\")\n            # print(\"demonimator should not be zero to divide\")\n        return func(a, b)\n    return inner\n@smart_divide\ndef divide(a: int, b: int) -> int | float :\n    return a/b",
+        "detail": "type_hints",
+        "documentation": {}
+    },
+    {
+        "label": "divide",
+        "kind": 2,
+        "importPath": "type_hints",
+        "description": "type_hints",
+        "peekOfCode": "def divide(a: int, b: int) -> int | float :\n    return a/b\nprint(divide(5, 0))",
+        "detail": "type_hints",
+        "documentation": {}
+    },
+    {
+        "label": "p1",
+        "kind": 5,
+        "importPath": "type_hints",
+        "description": "type_hints",
+        "peekOfCode": "p1 = Person('Mike', 49)\np2 = Person('Hillary', 13, 23)\npersons: list[Person] = [p1, p2]\ndef smart_divide(func: Callable[[int, int], int | float]):\n    def inner(a, b):\n        if b == 0:\n            raise ZeroDivisionError(\"demonimator should not be zero to divide\")\n            # print(\"demonimator should not be zero to divide\")\n        return func(a, b)\n    return inner",
+        "detail": "type_hints",
+        "documentation": {}
+    },
+    {
+        "label": "p2",
+        "kind": 5,
+        "importPath": "type_hints",
+        "description": "type_hints",
+        "peekOfCode": "p2 = Person('Hillary', 13, 23)\npersons: list[Person] = [p1, p2]\ndef smart_divide(func: Callable[[int, int], int | float]):\n    def inner(a, b):\n        if b == 0:\n            raise ZeroDivisionError(\"demonimator should not be zero to divide\")\n            # print(\"demonimator should not be zero to divide\")\n        return func(a, b)\n    return inner\n@smart_divide",
+        "detail": "type_hints",
         "documentation": {}
     }
 ]

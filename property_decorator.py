@@ -11,8 +11,8 @@ class Circle:
         if value > 0:
             self._radius = value
         else:
-            raise ValueError('Radius should be positive')
-    
+            raise ValueError("Radius should be positive")
+
     @radius.deleter
     def radius(self):
         print("Called Deleter")
@@ -22,6 +22,7 @@ class Circle:
     def diameter(self):
         return self._radius * 2
 
+
 c = Circle(5)
 print(c.radius)
 print(c.diameter)
@@ -30,5 +31,5 @@ print(c.diameter)
 c._radius = 6
 print(c._radius)
 
-#c.radius = -3
+# c.radius = -3
 del c.radius
